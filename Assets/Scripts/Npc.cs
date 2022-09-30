@@ -16,9 +16,15 @@ public class Npc : Character
 
     [SerializeField]
     private bool wander;
+
+    [SerializeField]
+    private string questName;
+    private QuestSystem.Quest quest;
+    private QuestSystem.QuestController questController;
     // Start is called before the first frame update
     void Start()
     {
+        questController = FindObjectOfType<QuestSystem.QuestController>();
         spawnPosition = transform.position;
         
         if (wander)
@@ -42,7 +48,12 @@ public class Npc : Character
         }
     }
 
-    public void StartDialogue(){
-        dialogue.StartDialogue(dialogueData.dialogue);
+    public void Interact(){
+        if (questName != ""){
+            if (quest == null){
+                dialogue.StartDialogue(dialogueData.dialogue);
+                quest = questController.AssignQuest(questName);
+            }
+        }
     }
 }

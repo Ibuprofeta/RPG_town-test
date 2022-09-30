@@ -21,7 +21,7 @@ public class Player : Character
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (Input.GetButtonDown("Fire1") && collision.GetComponent<Npc>() != null){
-            collision.GetComponent<Npc>().StartDialogue();
+            collision.GetComponent<Npc>().Interact();
         }
     }
 }
