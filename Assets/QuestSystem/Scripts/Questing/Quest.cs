@@ -10,6 +10,8 @@ namespace QuestSystem{
       public Goal goal;
       public bool completed;
       public List<string> itemRewards;
+
+      public string slug;
       
       public virtual void Complete(){
          Debug.Log("Quest completed!");

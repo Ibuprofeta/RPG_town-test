@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace QuestSystem{ 
     public class QuestController : MonoBehaviour
@@ -19,22 +20,44 @@ namespace QuestSystem{
                 Destroy(this.gameObject);
             }
             DontDestroyOnLoad(this.gameObject);
+            SceneManager.sceneLoaded += Populate;
+            //EventController.OnQuestCompleted += RemoveCompletedQuest;
             questDatabase = GetComponent<QuestDatabase>();
+
         }
 
         public Quest AssignQuest(string questName){
-            if(assignedQuests.Find(quest => quest.questName == questName)){
-                Debug.LogWarning("Quest already assigned");
-                return null;
+            Quest questToAdd = null;
+            
+            if (FindActiveQuest(questName) == null){
+                questToAdd = (Quest)gameObject.AddComponent(System.Type.GetType(questName));
+                assignedQuests.Add(questToAdd);
+                questDatabase.AddQuest(questToAdd);
+            } else {
+                questToAdd = (Quest)gameObject.AddComponent(System.Type.GetType(questName));
             }
-
-            Quest questToAdd = (Quest)gameObject.AddComponent(System.Type.GetType(questName));
-            assignedQuests.Add(questToAdd);
-            questDatabase.AddQuest(questToAdd);
 
             QuestUIItem questUI = Instantiate(questUIItem, questUIParent);
             questUI.Setup(questToAdd);
             return questToAdd;
+        }
+
+        private void Populate(Scene scene, LoadSceneMode sceneMode){
+            questUIParent = GameObject.FindGameObjectWithTag("UI/Quest Panel").transform;
+            if (assignedQuests.Count > 0){
+                for (int i = 0; i < assignedQuests.Count; i++){
+                    AssignQuest(assignedQuests[i].slug);
+                }
+            }
+             print("populate");
+        }
+
+        private void RemoveCompletedQuest(){
+
+        }
+
+        public Quest FindActiveQuest(string questSlug){
+            return GetComponent(System.Type.GetType(questSlug)) as Quest;
         }
     }
 }

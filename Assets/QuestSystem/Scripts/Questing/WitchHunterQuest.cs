@@ -5,6 +5,7 @@ using QuestSystem;
 
 public class WitchHunterQuest : Quest{
     void Awake(){
+        slug = "WitchHunterQuest";
         questName = "Witch Hunter";
         description = "Slay some witches.";
         itemRewards = new List<string>() {"Ruby Talisman"};

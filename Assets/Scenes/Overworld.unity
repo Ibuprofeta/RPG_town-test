@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7907563511228382095, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -91.4083
+      value: -236.9835
       objectReference: {fileID: 0}
     - target: {fileID: 7907563511228382095, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -228,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7907563511228382095, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 11.426025
+      value: 84.21362
       objectReference: {fileID: 0}
     - target: {fileID: 7907563511228382095, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -246,12 +246,24 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7907563511507505136, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00091552734
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907563511507505143, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
+      propertyPath: m_TagString
+      value: UI/Quest Panel
+      objectReference: {fileID: 0}
     - target: {fileID: 7907563511529525193, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907563511529525193, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907563511529525193, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7907563511683477029, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
@@ -6810,6 +6822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034693cf182590f4b969fe2c49077ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1757794722 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7907563511507505136, guid: 1aa8bc0eab76fe043987f760b483601d, type: 3}
+  m_PrefabInstance: {fileID: 185543287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1832611138
 GameObject:
   m_ObjectHideFlags: 0
@@ -8156,7 +8173,7 @@ PrefabInstance:
     - target: {fileID: 2616623640839035031, guid: 0d4acaee142b9004dbc1d0c01b2a9e39, type: 3}
       propertyPath: questUIParent
       value: 
-      objectReference: {fileID: 45105723}
+      objectReference: {fileID: 1757794722}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d4acaee142b9004dbc1d0c01b2a9e39, type: 3}
 --- !u!1001 &2826518830840536437
