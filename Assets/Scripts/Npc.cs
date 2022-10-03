@@ -48,7 +48,11 @@ public class Npc : Character
         }
     }
 
-    public void Interact(){
+    public void Interact(Character player = null){
+
+        if (GetComponent<BattleLauncherCharacter>() != null){
+            GetComponent<BattleLaunchCharacter>().PrepareBattle(player);
+        }
         if (questName != ""){
             if (quest == null){
                 dialogue.StartDialogue(dialogueData.dialogue);
