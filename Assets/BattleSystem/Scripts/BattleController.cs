@@ -92,6 +92,7 @@ namespace BattleSystem{
                 }
             } else {
                 Debug.Log("Battle over");
+                EventController.BattleCompleted();
             }
         }
 

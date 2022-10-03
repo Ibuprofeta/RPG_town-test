@@ -35,7 +35,7 @@ namespace BattleSystem{
 
         private void ReturnToWorld(){
             GatewayManager.Instance.SetSpawnPosition(worldPosition);
-            SceneManagener.LoadScene(worldSceneIndex);
+            SceneManager.LoadScene(worldSceneIndex);
         }
     }
 }

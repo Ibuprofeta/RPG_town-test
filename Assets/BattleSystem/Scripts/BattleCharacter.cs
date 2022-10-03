@@ -13,7 +13,7 @@ namespace BattleSystem{
         public List<Spell> spells;
 
         public void Hurt (int amount){
-            int damageAmount =  amount - defensePower;
+            int damageAmount =  amount; //- defensePower;
             health = Mathf.Max(health - damageAmount, 0);
             
                 print (characterName + health);
