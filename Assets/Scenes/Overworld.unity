@@ -1592,7 +1592,7 @@ MonoBehaviour:
   dialogueData: {fileID: 11400000, guid: 0c4b751c0838ebf4d8ee7327ba7f124b, type: 2}
   dialogue: {fileID: 1750060891}
   wander: 1
-  questName: WitchHunterQuest
+  questName: DemonSlayerQuest
 --- !u!50 &841407092
 Rigidbody2D:
   serializedVersion: 4

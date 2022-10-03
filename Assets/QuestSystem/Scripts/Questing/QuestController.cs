@@ -21,7 +21,7 @@ namespace QuestSystem{
             }
             DontDestroyOnLoad(this.gameObject);
             SceneManager.sceneLoaded += Populate;
-            //EventController.OnQuestCompleted += RemoveCompletedQuest;
+            EventController.OnQuestCompleted += RemoveCompletedQuest;
             questDatabase = GetComponent<QuestDatabase>();
 
         }
@@ -52,8 +52,9 @@ namespace QuestSystem{
              print("populate");
         }
 
-        private void RemoveCompletedQuest(){
-
+        private void RemoveCompletedQuest(Quest quest){
+            assignedQuests.Remove(quest);
+            Destroy(quest);
         }
 
         public Quest FindActiveQuest(string questSlug){

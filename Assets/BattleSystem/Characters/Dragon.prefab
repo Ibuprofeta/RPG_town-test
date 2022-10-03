@@ -53,6 +53,7 @@ MonoBehaviour:
   manaPoints: 10
   spells:
   - {fileID: 7158716538856031820, guid: 0b0abed896e738f4ea2626e2ed7ebe0b, type: 3}
+  enemyID: 1
 --- !u!212 &8986064726829947303
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -24,7 +24,6 @@ namespace QuestSystem{
          foreach(string item in itemRewards){
             Debug.Log("Rewarded with: " + item);
          }
-         Destroy(this);
       }
    }
 }

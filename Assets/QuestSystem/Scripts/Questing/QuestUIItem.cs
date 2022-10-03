@@ -28,9 +28,14 @@ namespace QuestSystem{
         }
 
         public void QuestCompleted(Quest quest){
-            if (this.quest == quest){
-                Destroy(this.gameObject, 1f);
+            if (this.quest.questName == quest.questName){
+                Destroy(this.gameObject);
             }
+        }
+
+        private void OnDestroy(){
+            EventController.OnQuestProgressChanged -= UpdateProgress;
+            EventController.OnQuestCompleted -= QuestCompleted;
         }
     }
 }

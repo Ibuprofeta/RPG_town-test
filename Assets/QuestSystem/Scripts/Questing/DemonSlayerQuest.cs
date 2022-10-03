@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using QuestSystem;
 
-public class VampireSlayerQuest : Quest{
+public class DemonSlayerQuest : Quest{
     void Awake(){
-        questName = "Vampire Slayer";
-        description = "Slay some vampires.";
+        questName = "Demon Hunter";
+        description = "Slay some demons.";
         itemRewards = new List<string>() {"Burnt Salmon", "Rusty Chains"};
-        goal = new KillGoal(10, 0, this);
+        goal = new KillGoal(1, 0, this);
 
     }
 

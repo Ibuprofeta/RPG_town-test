@@ -5,6 +5,8 @@ using UnityEngine;
 namespace BattleSystem{
     public class Enemy : BattleCharacter
     {
+        public int enemyID;
+
         public void Act(){
             int dieRoll = Random.Range(0,3);
             BattleCharacter target = BattleController.Instance.GetRandomPlayer();
