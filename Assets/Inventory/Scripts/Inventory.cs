@@ -31,6 +31,8 @@ public class Inventory : MonoBehaviour
         GiveItem(1);
         GiveItem(2);
         GiveItem(3);
+
+        inventoryUI = FindObjectOfType<UIInventory>();
     }
 
     private void Update(){

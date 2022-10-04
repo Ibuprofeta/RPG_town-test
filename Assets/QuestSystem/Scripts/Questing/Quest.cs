@@ -12,7 +12,13 @@ namespace QuestSystem{
       public List<string> itemRewards;
 
       public string slug;
-      
+
+      private Inventory inventory;
+
+      private void Start(){
+         inventory = FindObjectOfType<Inventory>();
+      }      
+
       public virtual void Complete(){
          Debug.Log("Quest completed!");
          EventController.QuestCompleted(this);
@@ -23,6 +29,7 @@ namespace QuestSystem{
          Debug.Log("Turning in quest... granting reward");
          foreach(string item in itemRewards){
             Debug.Log("Rewarded with: " + item);
+            inventory.GiveItem(item);
          }
       }
    }
