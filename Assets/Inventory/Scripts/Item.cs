@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class Item : MonoBehaviour
 {
     public int id;
@@ -17,7 +18,7 @@ public class Item : MonoBehaviour
         this.title = title;
         this.description = description;
         this.stats = stats;
-        this.icon = Resources.Load<Sprite>("Items/Sprites/" + title);
+        this.icon = Resources.Load<Sprite>("Sprite/" + title);
     }
 
     public Item(Item item){
@@ -26,7 +27,7 @@ public class Item : MonoBehaviour
         this.description = item.description;
         this.icon = item.icon;
         this.stats = item.stats;
-        this.icon = Resources.Load<Sprite>("Items/Sprites/" + title);
+        this.icon = Resources.Load<Sprite>("Sprite/" + title);
     }
 
     public void UpdateDictionary(){

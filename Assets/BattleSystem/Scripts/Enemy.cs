@@ -34,6 +34,7 @@ namespace BattleSystem{
         }
 
         public override void Die(){
+            EventController.EnemyDied(enemyID);
             base.Die();
             BattleController.Instance.characters[1].Remove(this);
         }

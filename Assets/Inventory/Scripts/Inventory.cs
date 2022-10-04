@@ -11,6 +11,10 @@ public class Inventory : MonoBehaviour
     private UIInventory inventoryUI;
 
     private void Awake(){
+        if (FindObjectsOfType<Inventory>().Length > 1){
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
         itemDatabase = FindObjectOfType<ItemDatabase>();
     }
     
@@ -27,6 +31,12 @@ public class Inventory : MonoBehaviour
         GiveItem(1);
         GiveItem(2);
         GiveItem(3);
+    }
+
+    private void Update(){
+        if(Input.GetKeyDown(KeyCode.I)){
+            inventoryUI.gameObject.SetActive(!inventoryUI.gameObject.activeSelf);
+        }
     }
 
     public void GiveItem(int id){

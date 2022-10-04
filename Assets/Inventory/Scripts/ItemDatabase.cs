@@ -13,7 +13,7 @@ public class ItemDatabase : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
-        BuildItemDatabase();
+        //BuildItemDatabase();
     }
 
 
